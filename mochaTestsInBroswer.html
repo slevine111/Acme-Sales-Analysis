@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mocha Tests</title>
+    <link
+      href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="https://cdn.jsdelivr.net/npm/mochawesome-report@1.0.0-alpha.1/dist/main.min.js"></script>
+    <script src="http://chaijs.com/chai.js"></script>
+    <script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+    <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+
+    <script>
+      var expect = chai.expect
+      mocha.setup('bdd')
+      mocha.options.reporter = 'mochawesome'
+      console.log(mocha.reporter)
+      console.log(mocha._reporter)
+      console.log(require)
+
+      //mocha.reporter('mochawesome')
+    </script>
+    <script src="SalesAnalysis.js"></script>
+    <script src="SalesAnalysis.spec.js"></script>
+
+    <script>
+      mocha.checkLeaks()
+      mocha.globals(['jQuery'])
+      mocha.run()
+    </script>
+  </body>
+</html>
